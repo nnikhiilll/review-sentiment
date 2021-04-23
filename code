@@ -1,0 +1,23 @@
+posWords = ["good", "great", "excellent", "awesome", "beautiful", "amazing", "glad", "joy","happy", "positive", "cool"]
+
+negWords = ["bad", "mediocre", "poor", "lousy", "sad", "unacceptable", "awful","negative", "inferior", "lame", "disappointing"]
+
+review=input("enter a review here: ")
+review=review.split()
+q=0
+z=0
+for i in review:
+  if i in posWords:
+    q+=1
+  if i in negWords:
+    z+=1
+percent1=(q/len(review))*100
+percent2=(z/len(review))*100
+
+print("I've detected "+str(percent1)+" percent positive words, and "+str(percent2)+" negative words.")
+if percent1>percent2:
+  print("I have detected that the review is mostly positive.")
+if percent1<percent2:
+  print("I have detected that the review is mostly negative.")
+if percent1==percent2:
+  print("The review is equally postive as it is negative.")
